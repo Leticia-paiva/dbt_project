@@ -15,10 +15,6 @@ fact_orders: Contains total price per product per order
 
 customer_total_spent: Aggregates total spend per customer (only includes customers who placed orders)
 
-You can check the result tables directly in BigQuery by visiting this link (you must be logged into a Google account):
-
-
-👉 View in BigQuery
 
 ## Project Structure
 The models follow DBT’s layered architecture:
@@ -86,10 +82,14 @@ Run the following commands from your terminal:
 `dbt test`
 
 ##### Create documentation
-`dbt docs generate`
+`dbt docs generate --static`
+
 ### Results
 You can now query the processed tables and views in your BigQuery project:
-
+* customers_raw
+* order_details_raw
+* orders_raw
+* products_raw
 * stg_customers
 * stg_orders
 * stg_order_details

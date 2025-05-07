@@ -4,7 +4,7 @@
 )}}
 
 SELECT *, current_timestamp() as load_at
-FROM {{ source('raw', 'orders') }}
+FROM {{ source('raw', 'orders_raw') }}
 {% if is_incremental() %}
 WHERE updated_at > (SELECT max(updated_at) FROM {{ this }})
 {% endif %}

@@ -4,7 +4,7 @@ version: 2
 seeds:
   - name: products
     config:
-      schema: raw
+      alias: products_raw
       enabled: true
       column_types:
         product_id: integer
@@ -19,7 +19,7 @@ seeds:
 
   - name: customers
     config:
-      schema: raw
+      alias: customers_raw
       enabled: true
       column_types:
         customer_id: integer
@@ -34,7 +34,7 @@ seeds:
 
   - name: orders
     config:
-      schema: raw
+      alias: orders_raw
       enabled: true
       column_types:
         order_id: integer
@@ -57,7 +57,7 @@ seeds:
 
   - name: order_details
     config:
-      schema: raw
+      alias: order_details_raw
       enabled: true
       column_types:
         order_id: integer
