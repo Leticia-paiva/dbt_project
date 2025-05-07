@@ -1,7 +1,6 @@
 {{ config(materialized='view') }}
 
 SELECT
-  c.customer_id,
   c.customer_name,
   sum(fo.total_price) as total_amount_spent
 FROM {{ ref('stg_customers') }} c
