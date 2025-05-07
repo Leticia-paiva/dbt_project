@@ -1,4 +1,4 @@
-# 📦 E-Commerce CDC DBT Project
+# DBT Project
 This DBT project simulates inputs from an e-commerce platform and builds datasets using Google BigQuery as the data warehouse.
 
 ## Project Overview
