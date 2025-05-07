@@ -85,6 +85,8 @@ Run the following commands from your terminal:
 ##### Run all tests
 `dbt test`
 
+##### Create documentation
+`dbt docs generate`
 ### Results
 You can now query the processed tables and views in your BigQuery project:
 
