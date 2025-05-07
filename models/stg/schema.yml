@@ -2,7 +2,6 @@ version: 2
 
 models:
   - name: stg_customers
-    description: "Latest version of each customer"
     columns:
       - name: customer_id
         tests: [not_null, unique]
@@ -14,7 +13,6 @@ models:
         tests: [not_null]
 
   - name: stg_orders
-    description: "Latest version of each order"
     columns:
       - name: order_id
         tests: [not_null, unique]
@@ -32,7 +30,6 @@ models:
         tests: [not_null]
 
   - name: stg_order_details
-    description: "Latest version of each order detail"
     columns:
       - name: order_id
         tests:
@@ -54,7 +51,6 @@ models:
         tests: [not_null]
 
   - name: stg_products
-    description: "Static product catalog"
     columns:
       - name: product_id
         tests: [not_null, unique]
