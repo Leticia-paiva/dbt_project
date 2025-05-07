@@ -11,9 +11,13 @@ The incremental load is made using the last updated_at.
 
 Finally, two fact views are built on top of the cleaned staging tables:
 
-fact_orders: Contains total price per product per order
+**fact_orders**: Contains total price per product per order
 
-customer_total_spent: Aggregates total spend per customer (only includes customers who placed orders)
+**customer_total_spent**: Aggregates total spend per customer (only includes customers who placed orders)
+
+## DBT Doc:
+
+**https://leticia-paiva.github.io/dbt_project**
 
 
 ## Project Structure
@@ -38,11 +42,11 @@ The models follow DBT’s layered architecture:
 ## Data Tests
 All key models are tested with:
 
-Primary key uniqueness
+- Primary key uniqueness
 
-Not null constraints
+- Not null constraints
 
-Referential integrity between related models
+- Referential integrity between related models
 
 ## ⚙️ Setup Instructions
 
