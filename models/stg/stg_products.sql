@@ -1,6 +1,7 @@
 {{ config(
     materialized='incremental',
-    unique_key='product_id'
+    unique_key='product_id',
+    incremental_strategy = 'merge'
 ) }}
 
 SELECT *, current_timestamp() as load_at
