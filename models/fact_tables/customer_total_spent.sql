@@ -3,7 +3,6 @@
 WITH customer_order_items AS (
   SELECT
     fo.customer_id,
-    -- Unnest the 'items' array to get each individual item
     item.total_price
   FROM {{ ref('fact_orders') }} fo,
   UNNEST(fo.items) AS item
