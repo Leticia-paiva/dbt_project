@@ -1,9 +1,19 @@
-{{ config(materialized='view') }}
+{{ config(materialized='view')}}
 
+WITH customer_order_items AS (
+  SELECT
+    fo.customer_id,
+    -- Unnest the 'items' array to get each individual item
+    item.total_price
+  FROM {{ ref('fact_orders') }} fo,
+  UNNEST(fo.items) AS item
+)
 SELECT
   c.customer_name,
-  sum(fo.total_price) as total_amount_spent
+  SUM(coi.total_price) AS total_amount_spent
 FROM {{ ref('stg_customers') }} c
-JOIN {{ ref('fact_orders') }} fo
-  ON c.customer_id = fo.customer_id
-GROUP BY c.customer_id, c.customer_name
+JOIN customer_order_items coi
+  ON c.customer_id = coi.customer_id
+GROUP BY
+  c.customer_id,
+  c.customer_name

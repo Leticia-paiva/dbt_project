@@ -2,20 +2,18 @@ version: 2
 
 models:
   - name: fact_orders
-    description: "Join of orders, order_details, and products"
+    description: "Join of orders, order_details, and products with item details aggregated into an array."
     columns:
       - name: order_id
-        tests: [not_null]
+        tests:
+          - not_null
+          - unique
       - name: customer_id
-        tests: [not_null]
-      - name: product_id
-        tests: [not_null]
-      - name: price
-        tests: [not_null]
-      - name: quantity
-        tests: [not_null]
-      - name: total_price
-        tests: [not_null]
+        tests:
+          - not_null
+      - name: items 
+        tests:
+          - not_null 
 
   - name: customer_total_spent
     description: "Total spend per customer"
@@ -23,4 +21,5 @@ models:
       - name: customer_name
         tests: [not_null]
       - name: total_amount_spent
-        tests: [not_null]
+        tests:
+          - not_null
